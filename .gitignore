@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+*.db
+*.env
+.env
+logs/
+data/
+outputs/
+config/secrets*

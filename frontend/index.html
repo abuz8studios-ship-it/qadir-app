@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QADIR — AI Agent</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">QADIR</span>
+                </div>
+                <div class="version">v0.1.0</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-view="chat">
+                    <span class="nav-icon">💬</span>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-btn" data-view="agents">
+                    <span class="nav-icon">👥</span>
+                    <span>Agents</span>
+                </button>
+                <button class="nav-btn" data-view="memory">
+                    <span class="nav-icon">🧠</span>
+                    <span>Memory</span>
+                </button>
+                <button class="nav-btn" data-view="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator" id="statusDot"></div>
+                <span id="statusText">Connecting...</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat View -->
+            <div class="view active" id="view-chat">
+                <div class="chat-header">
+                    <div class="soul-selector">
+                        <button class="soul-chip active" data-soul="qadir">🧠 Qadir</button>
+                        <button class="soul-chip" data-soul="zait">🛡️ Zait</button>
+                    </div>
+                    <div class="brain-info">
+                        <span id="currentBrain">Ready</span>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <div class="welcome-icon">🧠</div>
+                        <h2>. I'm Qadir.</h2>
+                        <p>Your AI Chief Architect. I build systems, ship products, and generate revenue.</p>
+                        <p class="welcome-hint">What are we building today?</p>
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="input-wrapper">
+                        <textarea id="chatInput" placeholder="Talk to Qadir..." rows="1"></textarea>
+                        <button id="sendBtn" class="send-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="input-hints">
+                        <span>Enter to send</span>
+                        <span>Shift+Enter for new line</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agents View -->
+            <div class="view" id="view-agents">
+                <div class="view-header">
+                    <h2>Agents</h2>
+                    <button class="btn-primary" id="createAgentBtn">+ New Agent</button>
+                </div>
+                <div class="agents-grid" id="agentsGrid">
+                    <!-- Agents loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Memory View -->
+            <div class="view" id="view-memory">
+                <div class="view-header">
+                    <h2>Memory</h2>
+                    <input type="text" id="memorySearch" placeholder="Search memory..." class="search-input">
+                </div>
+                <div class="memory-list" id="memoryList">
+                    <!-- Memory loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div class="view" id="view-settings">
+                <div class="view-header">
+                    <h2>Settings</h2>
+                </div>
+                <div class="settings-content">
+                    <div class="settings-section">
+                        <h3>API Keys</h3>
+                        <p class="settings-desc">Connect your AI providers. Keys are stored locally and never shared.</p>
+                        <div class="api-keys-grid" id="apiKeysGrid">
+                            <!-- Keys loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Brain Status</h3>
+                        <div class="brain-status" id="brainStatus">
+                            <!-- Status loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Application</h3>
+                        <div class="app-info">
+                            <div class="info-row"><span>Version</span><span>0.1.0</span></div>
+                            <div class="info-row"><span>Framework</span><span>QADIR CORE</span></div>
+                            <div class="info-row"><span>Protocol</span><span>NZT-8200</span></div>
+                            <div class="info-row"><span>Database</span><span>SQLite (local)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
